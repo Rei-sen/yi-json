@@ -47,7 +47,7 @@ impl<'a> JsonParser<'a> {
     fn parse_object(&mut self) -> Option<JsonValue> {
         let mut result = Vec::new();
 
-        while let Some(mut token) = self.peek() {
+        while let Some(token) = self.peek() {
             match token {
                 Token::RBrace => break,
                 _ => {
@@ -81,7 +81,7 @@ impl<'a> JsonParser<'a> {
     fn parse_array(&mut self) -> Option<JsonValue> {
         let mut result = Vec::new();
 
-        while let Some(mut token) = self.peek() {
+        while let Some(token) = self.peek() {
             match token {
                 Token::RBracket => break,
                 _ => {

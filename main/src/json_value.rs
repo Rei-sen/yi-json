@@ -9,7 +9,6 @@ pub enum JsonValue {
 }
 
 impl JsonValue {
-
     pub fn new_obj() -> JsonValue {
         JsonValue::Object(Vec::new())
     }

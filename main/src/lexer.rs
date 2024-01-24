@@ -23,7 +23,7 @@ pub struct Lexer<'a> {
 
 impl<'a> Lexer<'a> {
     pub fn new(source: &str) -> Lexer {
-        let mut input = source.chars();
+        let input = source.chars();
         Self::from_chars(input)
     }
 

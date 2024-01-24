@@ -1,9 +1,10 @@
-pub(crate) mod json_value;
-mod lexer;
-mod parser;
+pub mod json_value;
+pub mod lexer;
+pub mod parser;
+pub use macros::{JsonDeserializable, JsonSerializable};
 // mod macros;
 
-use json_value::JsonValue;
+pub use json_value::JsonValue;
 
 pub trait JsonSerializable {
     fn to_json(&self) -> JsonValue;
@@ -73,7 +74,6 @@ impl JsonDeserializable for bool {
 
 mod tests {
     use super::*;
-    use macros::{JsonSerializable, JsonDeserializable};
 
     #[derive(Debug, PartialEq, JsonSerializable, JsonDeserializable)]
     struct Person {
